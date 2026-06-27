@@ -1,0 +1,107 @@
+{
+	"_version": "1.85.0",
+	"sap.app": {
+		"id": "app.kpi",
+		"type": "application",
+		"i18n": {
+			"bundleUrl": "i18n/i18n.properties",
+			"supportedLocales": [
+				""
+			]
+		},
+		"applicationVersion": {
+			"version": "0.0.1"
+		},
+		"title": "{{appTitle}}",
+		"description": "{{appDescription}}",
+		"resources": "resources.json",
+		"sourceTemplate": {
+			"id": "@sap/generator-fiori:basic",
+			"version": "1.26.0",
+			"toolsId": "0ec1d5d7-b304-443b-9ca8-c73771cdfc12"
+		}
+	},
+	"sap.ui": {
+		"technology": "UI5",
+		"icons": {
+			"icon": "",
+			"favIcon": "",
+			"phone": "",
+			"phone@2": "",
+			"tablet": "",
+			"tablet@2": ""
+		},
+		"deviceTypes": {
+			"desktop": true,
+			"tablet": true,
+			"phone": true
+		}
+	},
+	"sap.ui5": {
+		"flexEnabled": false,
+		"dependencies": {
+			"minUI5Version": "1.149.0",
+			"libs": {
+				"sap.m": {},
+				"sap.ui.core": {}
+			}
+		},
+		"contentDensities": {
+			"compact": true,
+			"cozy": true
+		},
+		"models": {
+			"i18n": {
+				"type": "sap.ui.model.resource.ResourceModel",
+				"settings": {
+					"bundleName": "app.kpi.i18n.i18n",
+					"supportedLocales": [
+						""
+					]
+				}
+			}
+		},
+		"resources": {
+			"css": [
+				{
+					"uri": "css/style.css"
+				}
+			]
+		},
+		"routing": {
+			"config": {
+				"routerClass": "sap.m.routing.Router",
+				"controlAggregation": "pages",
+				"controlId": "app",
+				"transition": "slide",
+				"type": "View",
+				"viewType": "XML",
+				"path": "app.kpi.view",
+				"async": true,
+				"viewPath": "app.kpi.view"
+			},
+			"routes": [
+				{
+					"name": "RouteView1",
+					"pattern": ":?query:",
+					"target": [
+						"TargetView1"
+					]
+				}
+			],
+			"targets": {
+				"TargetView1": {
+					"id": "View1",
+					"name": "View1"
+				}
+			}
+		},
+		"rootView": {
+			"viewName": "app.kpi.view.App",
+			"type": "XML",
+			"id": "App",
+			"async": true
+		},
+		"flexBundle": false
+	}
+}
